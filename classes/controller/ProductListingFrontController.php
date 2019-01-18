@@ -286,8 +286,8 @@ abstract class ProductListingFrontControllerCore extends ProductPresentingFrontC
             ));
         }
 
-        // get the parameters containing the encoded facets from the URL
-        $encodedFacets = Tools::getValue('q');
+        // get the parameters containing the encoded facets from the URL 
+        $encodedFacets = html_entity_decode(Tools::getValue('q'),ENT_NOQUOTES,"UTF-8");
 
         /*
          * The controller is agnostic of facets.
